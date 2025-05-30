@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+
+/* TOP BAR ELEMENTS */
+
+.form-container {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.color-picker {
+    width: 4vw;
+    min-width: 50px;
+    vertical-align: middle;
+}
+
+.color-picker,
+select,
+.generate-scheme-btn {
+    display: inline-block;
+    height: 3em;
+    min-height: 30px;
+}
+
+/* SWATCHES */
+
+.color-swatch-container {
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.swatch {
+    display:flex;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.swatch-color {
+    height: 90%;
+}
+
+/* COLOR NAMES */
+
+.footer {
+    background-color: red;
+    height: 10%;
+}

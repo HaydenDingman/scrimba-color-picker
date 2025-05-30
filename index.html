@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="form-container">
+            <form id="color-scheme-form">
+                <input type="color" class="color-picker" id="color-picker" value="#ff00ff" aria-label="Choose a color">
+                <select name="scheme" id="scheme" aria-label="Choose a color scheme">
+                    <option value="Monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome – Dark</option>
+                    <option value="monochrome-light">Monochrome – Light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic Complement</option>
+                    <option value="triad">Triad</option>
+                    <option value="quad">Quad</option>
+                </select>
+                <button class="generate-scheme-btn" id="generate-scheme-btn">Get color scheme</button>
+            </form>
+            <button id="dark-mode" aria-label="Toggle Dark Mode">Dark</button>
+        </div>
+        <div class="color-swatch-container" id="color-swatch-container">
+            <div class="swatch">
+                <div class="swatch-color" id="swatch-1"></div>
+                <div class="footer" id="swatch-1-name"></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" id="swatch-2"></div>
+                <div class="footer" id="swatch-2-name"></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" id="swatch-3"></div>
+                <div class="footer" id="swatch-3-name"></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" id="swatch-4"></div>
+                <div class="footer" id="swatch-4-name"></div>
+            </div>
+            <div class="swatch">
+                <div class="swatch-color" id="swatch-5"></div>
+                <div class="footer" id="swatch-5-name"></div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
