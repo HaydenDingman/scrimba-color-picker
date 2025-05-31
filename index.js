@@ -1,15 +1,18 @@
 const colorSwatchContainer = document.getElementById("color-swatch-container");
+const colorPicker = document.getElementById("color-picker");
+const colorScheme = document.getElementById("scheme");
 
-fetch("https://www.thecolorapi.com/scheme?hex=0047AB&mode=analogic&count=5")
-    .then(res => res.json())
-    .then(data => {
-        const colors = data.colors;
-        colorSwatchContainer.innerHTML = "";
-        colors.forEach((color) => {
-            createColorSwatch(color);
-        })
-    });
-
+function getNewColorScheme() {
+    fetch(`https://www.thecolorapi.com/scheme?hex=${colorPicker.value.replace('#', '')}&mode=${colorScheme.value}&count=5`)
+        .then(res => res.json())
+        .then(data => {
+            const colors = data.colors;
+            colorSwatchContainer.innerHTML = "";
+            colors.forEach((color) => {
+                createColorSwatch(color);
+            })
+        });
+}
 
 function createColorSwatch(color) {
     const newSwatch = document.createElement("div");
@@ -24,3 +27,5 @@ function createColorSwatch(color) {
     newSwatch.append(newSwatchColor, newFooter);
     colorSwatchContainer.append(newSwatch);
 }
+
+getNewColorScheme();

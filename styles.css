@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family: "Cabin", sans-serif;
 }
 
 html, body {
@@ -58,6 +59,10 @@ select,
 /* COLOR NAMES */
 
 .footer {
-    background-color: red;
+    background-color: #fff;
     height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
 }
