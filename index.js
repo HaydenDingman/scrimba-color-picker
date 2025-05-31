@@ -1,10 +1,15 @@
 const colorSwatchContainer = document.getElementById("color-swatch-container");
 const colorPicker = document.getElementById("color-picker");
 const colorScheme = document.getElementById("scheme");
+const copyModal = document.getElementById("copy-modal");
 
 document.getElementById("color-scheme-form").addEventListener("submit", (e) => {
     e.preventDefault();
     getNewColorScheme();
+})
+
+document.getElementById("dark-mode").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
 })
 
 function getNewColorScheme() {
@@ -31,11 +36,21 @@ function createColorSwatch(color) {
 
     newSwatch.append(newSwatchColor, newFooter);
 
-    newSwatch.addEventListener("click", () => {
-        navigator.clipboard.writeText(color.hex.value);
+    newSwatch.addEventListener("click", (e) => {
+        copyColorHex(e, color.hex.value)
     })
 
     colorSwatchContainer.append(newSwatch);
+}
+
+function copyColorHex(e, color) {
+    navigator.clipboard.writeText(color);
+    copyModal.style.left = e.clientX - (copyModal.offsetWidth / 2);
+    copyModal.style.top = e.clientY - (copyModal.offsetHeight / 2);
+    copyModal.classList.add("fade-in");
+    setTimeout(() => {
+        copyModal.classList.remove("fade-in");
+    }, 1500)
 }
 
 getNewColorScheme();

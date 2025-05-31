@@ -12,6 +12,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 9fr;
+    background-color: #fff;
 }
 
 /* TOP BAR ELEMENTS */
@@ -49,8 +50,15 @@ select {
 .generate-scheme-btn:hover,
 .generate-scheme-btn:focus,
 .dark-mode:hover,
-.dark-mode:focus {
+.dark-mode:focus,
+select:hover,
+select:focus {
     background-color: #FED1C1;
+}
+
+.bulb {
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .color-picker,
@@ -83,7 +91,7 @@ select,
 }
 
 .swatch:hover {
-    box-shadow: 0 10px 1vw #000;
+    box-shadow: 0 10px 10px #000;
     z-index: 2;
 }
 
@@ -102,26 +110,55 @@ select,
     font-weight: 500;
 }
 
+/* COPY MODAL */
+.copy-modal {
+    position: absolute;
+    background-color: inherit;
+    z-index: 4;
+    font-size: 1.5rem;
+    padding: 1em 2em;
+    border-radius: 5px;
+    border: 1px solid #000;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+.fade-in {
+    opacity: .9;
+}
 
 /* DARK MODE */
 
-body,
-.footer {
+body.dark,
+body.dark .footer {
     background-color: #1F2937;
 }
 
-.color-picker,
-select,
-.generate-scheme-btn,
-.dark-mode {
-    background-color: #3D4B60;
+body.dark .color-picker,
+body.dark select,
+body.dark .generate-scheme-btn,
+body.dark .dark-mode {
+        background-color: #3D4B60;
+    }
+
+body.dark,
+body.dark .footer,
+body.dark .color-picker,
+body.dark select,
+body.dark .generate-scheme-btn{
+        color: #fff;
 }
 
-body,
-.footer,
-.color-picker,
-select,
-.generate-scheme-btn,
-.dark-mode {
-    color: #fff;
+body.dark .bulb {
+    fill: #fff;
+}
+
+
+body.dark select:hover,
+body.dark .generate-scheme-btn:hover,
+body.dark .dark-mode:hover,
+body.dark select:focus,
+body.dark .generate-scheme-btn:focus,
+body.dark .dark-mode:focus {
+    background-color: #FF847A;
 }
