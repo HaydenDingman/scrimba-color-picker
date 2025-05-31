@@ -23,18 +23,48 @@ body {
     padding: 1em;
 }
 
+form {
+    display: flex;
+    gap: 1em;
+    margin: 0;
+}
+
 .color-picker {
     width: 4vw;
     min-width: 50px;
     vertical-align: middle;
 }
 
+select {
+    min-width: 20vw;
+    padding: .5em 1em;
+}
+
+.generate-scheme-btn,
+.dark-mode {
+    padding: .5em 1em;
+    cursor: pointer;
+}
+
+.generate-scheme-btn:hover,
+.generate-scheme-btn:focus,
+.dark-mode:hover,
+.dark-mode:focus {
+    background-color: #FED1C1;
+}
+
 .color-picker,
 select,
-.generate-scheme-btn {
+.generate-scheme-btn,
+.dark-mode {
     display: inline-block;
     height: 3em;
     min-height: 30px;
+    font-size: 1.125rem;
+    
+    background-color: #fff;
+    border: 1px solid #b3b2b2;
+    border-radius: 5px;
 }
 
 /* SWATCHES */
@@ -52,6 +82,11 @@ select,
     background-color: blue;
 }
 
+.swatch:hover {
+    box-shadow: 0 10px 1vw #000;
+    z-index: 2;
+}
+
 .swatch-color {
     height: 90%;
 }
@@ -65,4 +100,28 @@ select,
     justify-content: center;
     align-items: center;
     font-weight: 500;
+}
+
+
+/* DARK MODE */
+
+body,
+.footer {
+    background-color: #1F2937;
+}
+
+.color-picker,
+select,
+.generate-scheme-btn,
+.dark-mode {
+    background-color: #3D4B60;
+}
+
+body,
+.footer,
+.color-picker,
+select,
+.generate-scheme-btn,
+.dark-mode {
+    color: #fff;
 }
